@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{% block title %}Marcos Sistema{% endblock %}</title>
+  <style>
+    body{font-family:system-ui;margin:0;background:#f5f6f8;color:#20242a}.nav{background:#111827;padding:14px 24px}.nav a{color:white;margin-right:18px;text-decoration:none}.container{max-width:1000px;margin:32px auto;padding:0 20px}.card{background:white;border-radius:10px;padding:18px;margin:12px 0;box-shadow:0 1px 5px #0001}.muted{color:#6b7280}table{width:100%;border-collapse:collapse;background:#fff}th,td{padding:12px;border-bottom:1px solid #eee;text-align:left}
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <a href="/">Início</a><a href="/produtos/">Produtos</a><a href="/historico/">Meu histórico</a><a href="/admin/">Admin</a>
+</nav>
+<main class="container">{% block content %}{% endblock %}</main>
+</body>
+</html>

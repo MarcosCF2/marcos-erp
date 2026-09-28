@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Histórico{% endblock %}
+{% block content %}
+<h1>Histórico de compras</h1>
+{% for sale in sales %}
+<div class="card">
+  <strong>Venda #{{ sale.id }}</strong> — {{ sale.created_at|date:"d/m/Y H:i" }} — {{ sale.get_status_display }}
+  <ul>{% for item in sale.items.all %}<li>{{ item.product.name }} × {{ item.quantity }} — R$ {{ item.subtotal }}</li>{% endfor %}</ul>
+  <strong>Total: R$ {{ sale.total }}</strong>
+</div>
+{% empty %}<p>Você ainda não possui compras registradas.</p>{% endfor %}
+{% endblock %}
